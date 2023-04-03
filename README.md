@@ -1,7 +1,6 @@
 # JWE
-JWE with A128CBC-HS256 and RSA-OAEP-256
+JWE with A128CBC-HS256 and RSA-OAEP-256\
 Format is General JWE JSON Serialization
-
 
 ---
 ### Example Format
@@ -21,8 +20,8 @@ all value are encoded with BASE64URL
 ```
 ---
 ###Parameter
-rsa algorithm : RSA/ECB/OAEPWithSHA-256AndMGF1Padding
-aes algorithm : AES/CBC/PKCS5Padding
+rsa algorithm : RSA/ECB/OAEPWithSHA-256AndMGF1Padding\
+aes algorithm : AES/CBC/PKCS5Padding\
 hash algorithm : HmacSHA256
 
 ---
