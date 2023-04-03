@@ -3,7 +3,7 @@ JWE with A128CBC-HS256 and RSA-OAEP-256\
 Format is General JWE JSON Serialization
 
 ---
-### Example Format
+### Example Format\
 all value are encoded with BASE64URL
 ```json
 {
@@ -19,13 +19,13 @@ all value are encoded with BASE64URL
 }
 ```
 ---
-###Parameter
+###Parameter\
 rsa algorithm : RSA/ECB/OAEPWithSHA-256AndMGF1Padding\
 aes algorithm : AES/CBC/PKCS5Padding\
 hash algorithm : HmacSHA256
 
 ---
-###Encrypt Steps
+###Encrypt Steps\
 1. 外部檔案載入RSA公鑰(cer)
 2. 隨機產生256bit, 32byte CEK密鑰
 3. 將32byte CEK密鑰拆分 > 前16byte為hmac密鑰, 後16byte為AES密鑰
@@ -47,7 +47,7 @@ hash algorithm : HmacSHA256
 	5. BASE64URL(tag)
 
 ---
-###Decrypt Steps
+###Decrypt Steps\
 1. 外部檔案載入RSA私鑰(pfx)
 2. 對全部欄位BASE64URL deocde
 3. RSA私鑰對CEK密鑰進行解密
