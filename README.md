@@ -35,17 +35,17 @@ hash algorithm : HmacSHA256
 6. RSA私鑰對CEK密鑰進行加密 (需使用外部Provider, 例如Bouncy Castle, 因預設的 MGF1 採用 SHA-1) -> encrypted key
 7. AES密鑰對明文進行加密 (須帶入iv) > ciphertext
 8. 產生驗證tag
-	8.1. 對BASE64URL(protected header)做ASCII編碼 > AAD
-	8.2. 對AAD Length做64-Bit Big-Endian Representation > octets
-	8.3. 串接 (AAD + iv + ciphertext + octets)
-	8.4. 對串接後data做HMAC256計算 > hmac data
-	8.5. 取hmac data的前16byte做為tag值
+	1. 對BASE64URL(protected header)做ASCII編碼 > AAD
+	2. 對AAD Length做64-Bit Big-Endian Representation > octets
+	3. 串接 (AAD + iv + ciphertext + octets)
+	4. 對串接後data做HMAC256計算 > hmac data
+	5. 取hmac data的前16byte做為tag值
 9. 組成JWE json格式
-	9.1. BASE64URL(protected header)
-	9.2. BASE64URL(encrypted key)
-	9.3. BASE64URL(ciphertext)
-	9.4. BASE64URL(iv)
-	9.5. BASE64URL(tag)
+	1. BASE64URL(protected header)
+	2. BASE64URL(encrypted key)
+	3. BASE64URL(ciphertext)
+	4. BASE64URL(iv)
+	5. BASE64URL(tag)
 
 ---
 ###Decrypt Steps
